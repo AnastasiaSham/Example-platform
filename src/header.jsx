@@ -1,79 +1,100 @@
 import React, { useState } from 'react';
-// import {
-//   AppstoreOutlined,
-//   ContainerOutlined,
-//  // DesktopOutlined,
-//   MailOutlined,
-// //   MenuFoldOutlined,
-// //   MenuUnfoldOutlined,
-
-// } from '@ant-design/icons';
+import { LoginOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-function getItem(label, key, children, type) {
-  return {
-    key,
-    children,
-    label,
-    type,
-  };
-}
+
 const items = [
-  getItem('Главная', '1'),
-  getItem('Данные', '2'),
-  getItem('Население', 'sub1',  [
-    getItem('Территориальное расселение', '4'),
-    getItem('Ценностная модель населения', '5'),
-  ]),
-  getItem('Контекст', 'sub2',  [
-    getItem('Сводка обеспеченности территорий', '7'),
-    getItem('Городские ценности', '8'),
-    getItem('Индексы качества городской среды', '9'),
-    getItem('Матрица коллокаций городских сервисов', '10'),
-    
-  ]),
-  getItem('Сервисы', 'sub3',  [
-    getItem('Маркет-плейс решений умного города', '12'),
-    getItem('Тематические маршруты по Санкт-Петербургу', '13'),
-    getItem('Платформа геолоцированных социологических опросов', '14'),
-    getItem('Сервис экспорта и обработки ГИС данных', '15')
- ]),
-  getItem('Option 3', '3'),
+  {
+    label: 'Главная', 
+    key: '1',
+  },
+  {
+    label: 'Данные', 
+    key: '2',
+  },
+  {
+    label: 'Население', 
+    key: 'sub1', 
+    children: [
+      {
+        label: 'Территориальное расселение', 
+        key: '4',
+      },
+      {
+        label:'Ценностная модель населения',
+        key: '5',
+      },
+    ],
+  },
+  {
+    label: 'Контекст',
+    key: 'sub2',
+    children:  [
+      {
+        label: 'Сводка обеспеченности территорий',
+        key: '7',
+      },
+      {
+        label: 'Городские ценности',
+        key: '8',
+      },
+      {
+        label: 'Индексы качества городской среды',
+        key: '9',
+      },
+      {
+        label: 'Матрица коллокаций городских сервисов',
+        key: '10',
+      },
+    ],
+  },
+  {
+    label: 'Сервисы',
+    key: 'sub3',
+    children: [
+      {
+        label: 'Маркет-плейс решений умного города',
+        key: '12',
+      },
+      {
+        label: 'Тематические маршруты по Санкт-Петербургу',
+        key: '13',
+      },
+      {
+        label: 'Платформа геолоцированных социологических опросов',
+        key: '14',
+      },
+      {
+        label: 'Сервис экспорта и обработки ГИС данных',
+        key: '15'
+      },
+    ],
+  },
+  {
+    label: 'Санкт-Петербург',
+    key: '16',
+    icon: <EnvironmentOutlined />,
+  },
+  {
+    label: 'Войти',
+    key: '17',
+    icon: <LoginOutlined />,
+  },
 ];
-const App = () => {
- const [collapsed, setCollapsed] = useState(false);
-   const toggleCollapsed = () => {
-     setCollapsed(!collapsed);
-   };
-  return (
-    <div
-      style={{
-        width: 1000,
-        display: 'flex',
-        alignItems: 'center'
-      }}
-    >
-      {/* <Button
-        type="primary"
-        onClick={toggleCollapsed}
-        style={{
-          marginBottom: 16,
-        }}
-      >
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button> */}
-      <Menu
-        defaultSelectedKeys={['2']}
-        defaultOpenKeys={['sub1']}
-        mode="horizontal"
-        theme="light"
-        inlineCollapsed={collapsed}
-        items={items}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      />
-    </div>
-  );
+const Header = () => {
+    const [current, setCurrent] = useState('mail');
+    const onClick = (e) => {
+      console.log('click ', e);
+      setCurrent(e.key);
+    };
+    return (
+      <div>
+        <Menu onClick={onClick}
+          selectedKeys={[current]}
+          mode="horizontal"
+          items={items}
+          
+        />
+      </div>
+    );
 };
-export default App;
+export default Header;
