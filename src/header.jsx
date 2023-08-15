@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LoginOutlined, EnvironmentOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
+import css from './header.css'
 
 const items = [
   {
@@ -69,6 +70,7 @@ const items = [
       },
     ],
   },
+
   {
     label: 'Санкт-Петербург',
     key: '16',
@@ -89,6 +91,7 @@ const Header = () => {
     return (
       <div>
         <Menu onClick={onClick}
+          className={css.container}
           selectedKeys={[current]}
           mode="horizontal"
           items={items}

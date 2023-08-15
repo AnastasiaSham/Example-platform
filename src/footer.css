@@ -1,0 +1,83 @@
+.footer {
+    min-height: 365px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 50px;
+    background-color: #004168;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: 990px) {
+        flex-direction: column;
+    }
+
+    .company-info {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 990px) {
+            width: 100%;
+            order: 1;
+            margin-bottom: 36px;
+            align-items: flex-start;
+        }
+    }
+
+    .company-address {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    .company-email {
+        display: flex;
+        align-items: center;
+    }
+
+    .company-data {
+        width: 50%;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1rem;
+        line-height: 29px;
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+
+        @media screen and (max-width: 990px) {
+            width: 100%;
+            order: 2;
+            align-items: flex-start;
+        }
+    }
+
+    .company-name {
+        margin-top: 12px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: -0.05em;
+    }
+
+    .company-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+    }
+
+    .m-0 {
+        margin: 0;
+    }
+}

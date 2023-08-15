@@ -1,11 +1,16 @@
 import React from "react";
 
 function Content() {
-  return <h1
-   style={{
-    textAlign: 'center',
-   }}
-  >Error</h1>;
-}
+  const imageSPb = `./media/saint-petersburg.webp`
+  const altText = 'image saint-petersburg'
+ 
+  return (
+    <div>
+      <img src={imageSPb} alt={altText}/>
+      <h1
 
+      >Error</h1>
+    </div>
+  );
+}
 export default Content;
