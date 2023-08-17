@@ -1,0 +1,43 @@
+.info {
+    padding: 40px 40px 40px;
+    background: linear-gradient(rgba(11, 120, 188, 0) 10%,
+    rgba(7, 74, 116, 0.6) 60%,
+    rgba(3, 28, 44, 0.6) 100%),
+    url(./media/saint-petersburg.89aede21a59fd583da89.webp) no-repeat 80% 50%;
+    background-size: cover;
+    box-shadow: 0 0 20px 0 #436481;
+}
+
+
+.info-block {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    margin: 50px auto;
+    padding: 30px 60px;
+    background: rgba(3, 55, 88, 0.546);
+    border-radius: 20px;
+}
+
+.info-block p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.main-title {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 61px;
+    text-align: center;
+    color: #004168;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+}
+.image-cat {
+    padding: 20px;
+    border-radius: 10%;
+}
+
+

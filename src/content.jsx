@@ -1,16 +1,24 @@
 import React from "react";
+import './content.css';
 
-function Content() {
-  const imageSPb = `./media/saint-petersburg.webp`
-  const altText = 'image saint-petersburg'
- 
+const Content = () => {
+  
   return (
-    <div>
-      <img src={imageSPb} alt={altText}/>
-      <h1
-
-      >Error</h1>
-    </div>
+    <section className="info">
+      <h1 className="main-title">
+        Инструментальная платформа цифровой урбанистики
+      </h1>
+      <div className="info-block">
+        <div>
+          <p>
+            Кажется, у нас проблема! <br/> Произошел сбой, попробуйте зайти позже.
+          </p>
+        </div>
+        <div className="image-wrap">
+          <img className="image-cat" src={require('./media/falling-cat.jpg')} alt="" />
+        </div>
+      </div>
+    </section>
   );
 }
 export default Content;
